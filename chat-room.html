@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- bootstrap css -->
+
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/trigger.js"></script>
+    <script>
+        function toggleFullscreen(elem) {
+            elem = elem || document.documentElement;
+            if (!document.fullscreenElement && !document.mozFullScreenElement &&
+                !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.msRequestFullscreen) {
+                        elem.msRequestFullscreen();
+                    } else if (elem.mozRequestFullScreen) {
+                        elem.mozRequestFullScreen();
+                    } else if (elem.webkitRequestFullscreen) {
+                        elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        }      
+    </script>
+    <!-- bootstrap js -->
+    <title>Pinky Chat</title>
+</head>
+<body>
+    <!-- sidenav grup info -->
+    <div id="grupinfo" class="snav row row-fluid infogroup bgpink bx-shadow-lg" style="visibility: hidden; display: none;">
+        <div class="trg-icon float-right mt-12">
+            <a onclick="animateCSS('#grupinfo','slideoutleft',function() {$('#grupinfo').removeClass('slideoutleft');closediv('grupinfo')});"><img id="icon-close" class="icon-trigger pointer-cursor" src="img/close.png" alt=""></a>
+        </div>
+        <div class="position-absolute w-100">
+            <div class="col">
+                <div class="w-100 mx-auto">
+                    <center>
+                        <div class="mt-48 mb-20">
+                            <img class="icon-profil chat-mb12" src="img/pinkychat.png" alt=""><br>
+                            <span class="font-weight-bold fcwhitesmoke fs20">Pinky Chat</span>
+                        </div>
+                    </center>
+                    <div class="mb-12">
+                        <span class="fcwhitesmoke">Participant : <span class="font-weight-bold">4 online</span></span>
+                    </div>
+                    <div class="participant">
+                        <!-- one status -->
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="circle-img-sts" src="img/p1.jpg" alt="">
+                            </div>
+                            <div class="col fcwhitesmoke my-auto">
+                                <div class="row"><span class="font-weight-bold">Dicki Kurniawan</span></div>
+                                <div class="row"><span class="fs12">online</span></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- one status -->
+        
+                        <!-- one status -->
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="circle-img-sts" src="img/p1.jpg" alt="">
+                            </div>
+                            <div class="col fcwhitesmoke my-auto">
+                                <div class="row"><span class="font-weight-bold">Bagas Alfian</span></div>
+                                <div class="row"><span class="fs12">online</span></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- one status -->
+        
+                        <!-- one status -->
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="circle-img-sts" src="img/p1.jpg" alt="">
+                            </div>
+                            <div class="col fcwhitesmoke my-auto">
+                                <div class="row"><span class="font-weight-bold">Toriq Isnandar</span></div>
+                                <div class="row"><span class="fs12">online</span></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- one status -->
+        
+                        <!-- one status -->
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="circle-img-sts" src="img/p1.jpg" alt="">
+                            </div>
+                            <div class="col fcwhitesmoke my-auto">
+                                <div class="row"><span class="font-weight-bold">Hassimoto Irasawa</span></div>
+                                <div class="row"><span class="fs12">online</span></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- one status -->
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <!-- sidenav grup info -->
+    <!-- menu -->
+    <div id="menu-open" class="snav row row-fluid menu-info bgpink bx-shadow-lg" style="visibility: hidden; display: none;">
+        <div class="trg-icon float-right mt-12">
+            <a onclick="animateCSS('#menu-open','slideoutright',function() {$('#menu-open').removeClass('slideoutright');closediv('menu-open')});"><img class="icon-trigger pointer-cursor" src="img/close.png" alt=""></a>
+        </div>
+        <div class="position-absolute w-100">
+            <div class="col">
+                <div class="w-100 mx-auto">
+                    <div class="participant mt-72">
+                        <div align="center">
+                            <a class="fs48 menu-ls fcwhitesmoke" onclick="animateCSS('#menu-open','slideoutright',function() {$('#menu-open').removeClass('slideoutright');closediv('menu-open')});" href="#">Chat Room</a><br>
+                            <a class="fs48 menu-ls fcwhitesmoke" href="profile.html">Profile</a><br>
+                            <a id="full" class="fs48 menu-ls fcwhitesmoke" onclick="toggleFullscreen()" href="#" >Fullscreen Mode</a><br>
+                            <a class="fs48 menu-ls fcwhitesmoke" href="">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <!-- menu -->
+    <!-- main chat window -->
+    <nav class="navbar fixed-top bgpink bx-shadow-md slideindown">
+        <a class="navbar-brand pointer-cursor" onclick="opendiv('grupinfo');animateCSS('#grupinfo','slideinleft',function() {$('#grupinfo').removeClass('slideinleft')});">
+            <div class="row">
+                <div class="col my-auto">
+                    <img src="img/pinkychat.png" width="30" height="30" alt="">
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <span class="fcwhitesmoke">Pinky Chat</span> 
+                    </div>
+                    <div class="row">
+                        <span class="fs12 fclgrey">Info grup selengkapnya klik disini</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a class="pointer-cursor" onclick="opendiv('menu-open');animateCSS('#menu-open','slideinright',function() {$('#menu-open').removeClass('slideinright')});""><img class="navbar-brand" src="img/dotmenumini.png" alt=""></a>
+    </nav>
+    <main class="wchat-minhei bglpink pt72 pb72 plr8">
+        <!-- one popup chat from friends-->
+        <div class="row chat-mb12 mx-auto">
+            <div class="chat-pop chat-frnds bx-shadow-md">
+                <span class="">
+                    <span class="font-weight-bold fcpurple">
+                        Dicki Kurniawan
+                    </span>
+                    <br>
+                    <span class="chat-msg">
+                        Pie lur meh nggarap jam piro ? ngelu iki sirahku tak mangan sek
+                    </span>
+                    <br>
+                    <span class="time-snd fcgrey float-right">
+                        16.36
+                    </span>
+                </span>
+            </div>
+        </div>
+        <!-- one popup chat from friends-->
+
+        <!-- one popup chat from me -->
+        <div class="row right-pop-chat chat-mb12 mx-auto">
+            <div class="chat-pop chat-me bx-shadow-md">
+                <span class="">
+                    <span class="float-right chat-msg">
+                        Bar ki to, ojo suwe suwe ben ndang bar ndang turu
+                    </span>
+                    <br>
+                    <span class="time-snd fcgrey float-right">
+                        16.38
+                    </span>
+                </span>
+            </div>
+        </div>
+        <!-- one popup chat from me -->
+
+        <!-- one popup chat from friends-->
+        <div class="row chat-mb12 mx-auto">
+            <div class="chat-pop chat-frnds bx-shadow-md">
+                <span class="">
+                    <span class="font-weight-bold fcpurple">
+                        Bagas Alfian
+                    </span>
+                    <br>
+                    <span class="chat-msg">
+                        Mabar yokkk, login login
+                    </span>
+                    <br>
+                    <span class="time-snd fcgrey float-right">
+                        16.38
+                    </span>
+                </span>
+            </div>
+        </div>
+        <!-- one popup chat from friends-->
+
+        <!-- one popup chat from friends-->
+        <div class="row chat-mb12 mx-auto">
+            <div class="chat-pop chat-frnds bx-shadow-md">
+                <span class="">
+                    <span class="font-weight-bold fcpurple">
+                        Toriq Isnandar
+                    </span>
+                    <br>
+                    <span class="chat-msg">
+                        Pie mabar opo nggarap?
+                    </span>
+                    <br>
+                    <span class="time-snd fcgrey float-right">
+                        16.40
+                    </span>
+                </span>
+            </div>
+        </div>
+        <!-- one popup chat from friends-->
+
+        <!-- one popup chat from me -->
+        <div class="row right-pop-chat chat-mb12 mx-auto">
+            <div class="chat-pop chat-me bx-shadow-md">
+                <span class="">
+                    <span class="float-right chat-msg">
+                        Mabar aeee
+                    </span>
+                    <br>
+                    <span class="time-snd fcgrey float-right">
+                        16.41
+                    </span>
+                </span>
+            </div>
+        </div>
+        <!-- one popup chat from me -->
+
+        <!-- one popup chat from friends-->
+        <div class="row chat-mb12 mx-auto">
+            <div class="chat-pop chat-frnds bx-shadow-md">
+                <span class="">
+                    <span class="font-weight-bold fcpurple">
+                        Hassimoto Irasawa
+                    </span>
+                    <br>
+                    <span class="chat-msg">
+                        Ngopi aee yohhhh
+                    </span>
+                    <br>
+                    <span class="time-snd fcgrey float-right">
+                        16.45
+                    </span>
+                </span>
+            </div>
+        </div>
+        <!-- one popup chat from friends-->
+    </main>
+    <footer class="footer navbar fixed-bottom bglpink slideinup">
+        <div class="row w-100 mx-auto">
+            <div class="col" style="padding-left: 0px; padding-right:8px">
+                    <span><input class="stform stform-chat bx-shadow-md" type="text" name="" id="" placeholder="Ketik pesan disini"></span>
+            </div>
+            <a type="button" class="btn bgpink btn-circle bx-shadow-md"><img src="img/send.png" width="20px" height="25px" alt=""></a>
+        </div>
+    </footer>
+    <!-- main chat window -->
+</body>
+</html>
